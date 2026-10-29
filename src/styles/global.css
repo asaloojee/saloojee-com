@@ -1,0 +1,56 @@
+:root {
+  color-scheme: light;
+
+  /* Shared hue from Omniwerx; restrained chroma for a light palette. */
+  --color-background: oklch(0.97 0.003 27.557);
+  --color-surface: oklch(0.99 0.002 27.557);
+  --color-border: oklch(0.88 0.008 27.557);
+  --color-foreground-primary: oklch(0.28 0.012 27.557);
+  --color-foreground-secondary: oklch(0.43 0.012 27.557);
+  --color-accent: oklch(0.52 0.12 27.557);
+
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-foreground-secondary);
+  background-color: var(--color-background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100svh;
+}
+
+.wrapper {
+  --wrapper-gutter: 1rem;
+  display: grid;
+  grid-template-columns:
+    minmax(var(--wrapper-gutter), 1fr)
+    min(42rem, calc(100% - 2 * var(--wrapper-gutter)))
+    minmax(var(--wrapper-gutter), 1fr);
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+  color: var(--color-foreground-primary);
+}
