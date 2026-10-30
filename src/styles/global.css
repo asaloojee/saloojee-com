@@ -42,6 +42,7 @@ body {
 
 p {
   font-size: 18px;
+  margin: 0;
 }
 
 h1,
@@ -53,4 +54,49 @@ h6,
 strong,
 b {
   color: var(--color-foreground-primary);
+}
+
+.header {
+  display: grid;
+  isolation: isolate;
+  background-color: var(--color-background);
+  margin-block-start: 8rem;
+}
+
+.header > * {
+  grid-area: 1 / 1;
+}
+
+.header img {
+  place-self: start;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 8rem;
+  block-size: auto;
+}
+
+.header__text {
+  display: grid;
+  place-self: start;
+  inline-size: fit-content;
+}
+
+.header h1 {
+  z-index: 1;
+  place-self: start;
+  margin: 0;
+  padding: 0.5rem 0 0 0.5rem;
+  color: var(--color-background);
+  mix-blend-mode: difference;
+  font-size: 3.5rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: end;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: var(--color-foreground-secondary);
+  justify-self: end;
+  text-align: end;
 }
